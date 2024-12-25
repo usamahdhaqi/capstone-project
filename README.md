@@ -50,7 +50,7 @@ Aplikasi Keuangan UMKM adalah aplikasi desktop offline yang dirancang untuk memb
 
 ## **Pengembang**
 - Nama: Usamah Dhiya'ul Haqi
-- Email: [usamahdeha@gmail.com](mailto:usamahdeha@gmail.com)
+- Email: [usamahdhaqi@gmail.com](mailto:usamahdhaqi@gmail.com)
 - Tahun: 2024
 
 ---
