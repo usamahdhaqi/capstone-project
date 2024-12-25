@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikasi Keuangan UMKM</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <div class="logo-container">
+      <img src="logoaplikasi.png" alt="Logo Aplikasi" class="logo">
+    </div>
+
+    <header class="app-header">
+      <h1>Aplikasi Keuangan UMKM</h1>
+    </header>
+
+    <!-- Form untuk Input Data Keuangan -->
+    <section class="form-section">
+      <h2>Tambah Data Keuangan</h2>
+      <label for="selectedDate">Tanggal:</label>
+      <input type="date" v-model="selectedDate" class="form-input">
+      <label for="newIncome">Pendapatan:</label>
+      <input type="text" v-model="newIncome" @input="formatCurrency('newIncome')" placeholder="Masukkan pendapatan" class="form-input">
+      <label for="newExpense">Pengeluaran:</label>
+      <input type="text" v-model="newExpense" @input="formatCurrency('newExpense')" placeholder="Masukkan pengeluaran" class="form-input">
+      <button class="submit" @click="addEntry">Tambah</button>
+    </section>
+
+    <!-- Tabel Data Keuangan -->
+    <section class="table-section">
+      <div class="table-container">
+        <h2>Data Keuangan</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Tanggal</th>
+                <th>Pendapatan</th>
+                <th>Pengeluaran</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="finance in finances" :key="finance.id">
+                <td>{{ formatDate(finance.date) }}</td>
+                <td>{{ formatCurrencyDisplay(finance.income) }}</td>
+                <td>{{ formatCurrencyDisplay(finance.expense) }}</td>
+                <td class="button">
+                  <button class="edit" @click="openEditModal(finance)">Edit</button>
+                  <button class="delete" @click="deleteEntry(finance.id)">Hapus</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal untuk Edit Data -->
+    <div v-if="showEditModal" class="edit-modal">
+      <div class="edit-modal-content">
+        <h3>Edit Data Keuangan</h3>
+        <label for="editDate">Tanggal:</label>
+        <input type="date" v-model="editDate">
+        <label for="editIncome">Pendapatan:</label>
+        <input type="text" v-model="editIncome" @input="formatCurrency('editIncome')">
+        <label for="editExpense">Pengeluaran:</label>
+        <input type="text" v-model="editExpense" @input="formatCurrency('editExpense')">
+        <button class="confirm-edit" @click="updateEntry">Simpan</button>
+        <button class="cancel-edit" @click="closeEditModal">Batal</button>
+      </div>
+    </div>
+
+    <!-- Modal untuk Konfirmasi Hapus -->
+    <div v-if="showDeleteModal" class="delete-modal">
+      <div class="delete-modal-content">
+        <h3>Konfirmasi Hapus</h3>
+        <p>Apakah Anda yakin ingin menghapus data ini?</p>
+        <button class="confirm-delete" @click="confirmDelete">Hapus</button>
+        <button class="cancel-delete" @click="closeDeleteModal">Batal</button>
+      </div>
+    </div>
+
+    <!-- Grafik Visualisasi Keuangan -->
+    <div class="chart-section">
+      <h2>Visualisasi Keuangan</h2>
+      <canvas id="financeChart"></canvas>
+    </div>
+
+    <!-- Rekomendasi Keuangan -->
+    <div class="recommendation-section">
+      <h2>Rekomendasi Keuangan</h2>
+      <ul>
+        <li v-for="recommendation in recommendations" :key="recommendation">{{ recommendation }}</li>
+      </ul>
+    </div>
+     
+  </div>   
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>

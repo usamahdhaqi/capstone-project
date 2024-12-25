@@ -1,0 +1,52 @@
+{
+  "name": "aplikasi-keuangan-umkm",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "package-win": "electron-packager . aplikasi-keuangan-umkm --platform=win32 --arch=x64 --out=dist --icon=assets/logoaplikasi.ico --overwrite"
+  },
+  "keywords": [],
+  "author": "Usamah Dhiya'ul Haqi",
+  "license": "ISC",
+  "description": "Aplikasi keuangan offline untuk UMKM",
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  },
+  "build": {
+    "appId": "com.umkm.aplikasi",
+    "npmRebuild": true,
+    "nodeGypRebuild": true,
+    "productName": "Aplikasi-keuangan-UMKM",
+    "files": [
+      "src/**/*",
+      "data/**/*",
+      "main.js",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "extraResources": [
+      {
+        "from": "./data/",
+        "to": "./data/"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/logoaplikasi.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/logoaplikasi.icns"
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "electron-packager": "^17.1.2",
+    "node-gyp": "^10.2.0"
+  }
+}
