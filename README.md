@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Aplikasi Keuangan UMKM
 
 Aplikasi Keuangan UMKM adalah aplikasi desktop offline yang dirancang untuk membantu pelaku usaha kecil dan menengah (UMKM) dalam mengelola keuangan mereka dengan lebih efektif. Aplikasi ini menyediakan fitur pencatatan pemasukan, pengeluaran, serta memberikan rekomendasi keuangan otomatis berdasarkan data yang dimasukkan.
@@ -15,7 +15,7 @@ Aplikasi Keuangan UMKM adalah aplikasi desktop offline yang dirancang untuk memb
 ---
 
 ## **Cara Instalasi**
-1. Jalankan file `SetupNamaAplikasi.exe` yang telah disediakan.
+1. Jalankan file `aplikasi-keuangan-umkm.exe` yang telah disediakan.
 2. Ikuti langkah-langkah instalasi hingga selesai.
 3. Setelah selesai, buka aplikasi melalui shortcut di desktop atau menu Start.
 
@@ -53,6 +53,7 @@ Aplikasi Keuangan UMKM adalah aplikasi desktop offline yang dirancang untuk memb
 - Email: [usamahdeha@gmail.com](mailto:usamahdeha@gmail.com)
 - Tahun: 2024
 =======
+
 # capstone-project
-A simple financial application for SMEs, built with Electron and Node.js.
->>>>>>> 161fec2e6705aa5e10a0e82a85be968038ad80c4
+
+
