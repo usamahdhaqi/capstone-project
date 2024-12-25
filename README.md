@@ -53,7 +53,8 @@ Aplikasi Keuangan UMKM adalah aplikasi desktop offline yang dirancang untuk memb
 - Email: [usamahdeha@gmail.com](mailto:usamahdeha@gmail.com)
 - Tahun: 2024
 =======
+---
 
-# capstone-project
-
+## capstone-project
+A simple financial application for SMEs, built with Electron and Node.js.
 
